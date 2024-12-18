@@ -5,11 +5,13 @@ def die():
       die_roll=random.randrange(1,6) # die rolls it gives random number
       return die_roll
 
+count =0
 def chance():
       nls=random.randrange(3)
       return nls
 
 while pos<100:
+    count+=1
     n=chance()
     check=die()
     if pos+check<=100:
@@ -31,8 +33,8 @@ while pos<100:
     if pos>100:
        pos=pos
     if pos ==100:
-       print("win!!!!!")
-    
+       print("win!!!")
+       print("number of dies rolled to win!!---->",count)
        
 
 
