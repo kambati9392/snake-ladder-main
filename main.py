@@ -4,27 +4,35 @@ def die():
     # global die_roll
       die_roll=random.randrange(1,6) # die rolls it gives random number
       return die_roll
+
 def chance():
       nls=random.randrange(3)
       return nls
-# count =0
+
 while pos<100:
     n=chance()
-    if n==0:
-        pos=pos+die()
-        print(pos)
-    elif n==1:
-        pos=pos+die()
-        print(pos)
-    else:
-        pos-=die()
-        print(pos)
+    check=die()
+    if pos+check<=100:
+      pos=pos+check
+    if pos ==100:
+       print("current position =",pos)
+    if pos<100:
+        
+        if n==1:
+           check=die()
+           if pos+check<=100:
+             pos=pos+check
+        elif n==2:
+            pos=pos-die()
 
-    if pos==100:
-         print("player wins the game")
-    elif pos<0:
-        pos=0
-   
+        print("current position =",pos)
+    if pos<0:
+     pos=0
+    if pos>100:
+       pos=pos
+    if pos ==100:
+       print("win!!!!!")
+    
        
 
 
